@@ -93,10 +93,9 @@ get_header(); ?>
  * Get Report List  Sample
  */
 
-define('__INC__', getenv(INC_PATH) ); 
-require_once(__INC__.'.config.inc.php'); 
-require_once(__INC__.'MarketplaceWebService/Client.php'); 
-require_once(__INC__.'MarketplaceWebService/Model/GetReportListRequest.php'); 
+require_once(getenv(INC_PATH).'MarketplaceWebService/MWSconfig.php'); 
+require_once(getenv(INC_PATH).'MarketplaceWebService/Client.php'); 
+require_once(getenv(INC_PATH).'MarketplaceWebService/Model/GetReportListRequest.php'); 
 
 
 /************************************************************************
