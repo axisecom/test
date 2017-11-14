@@ -19,7 +19,7 @@
 /**
  *  @see MarketplaceWebService_Model
  */
-require_once ('MarketplaceWebService/Model.php');  
+require_once(getenv(INC_PATH) . 'MarketplaceWebService/Model.php');  
 
     
 
