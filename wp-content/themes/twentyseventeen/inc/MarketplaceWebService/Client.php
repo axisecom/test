@@ -872,7 +872,7 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface {
         if (is_null($curlOptions[CURLOPT_RETURNTRANSFER]) || !$curlOptions[CURLOPT_RETURNTRANSFER]) {
             $curlOptions[CURLOPT_RETURNTRANSFER] = true;
         }
-
+                
         $this->curlClient = curl_init();
         curl_setopt_array($this->curlClient, $curlOptions);
 
@@ -1015,7 +1015,7 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface {
             CURLOPT_VERBOSE => true,
             CURLOPT_HEADERFUNCTION => array($this, 'headerCallback'),
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_SSL_VERIFYPEER => true,
+            CURLOPT_SSL_VERIFYPEER => false,
             CURLOPT_SSL_VERIFYHOST => 2
         );
     }
@@ -1030,7 +1030,7 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface {
      */
     private function configureCurlOptions($action, array $converted, $streamHandle = null) {
         $curlOptions = $this->getDefaultCurlOptions();
-
+       
         if (!is_null($this->config['ProxyHost'])) {
             $proxy = $this->config['ProxyHost'];
             $proxy .= ':' . ($this->config['ProxyPort'] == -1 ? '80' : $this->config['ProxyPort']);
